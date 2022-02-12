@@ -10,7 +10,7 @@ For this project, we will be using data from the [Waymo Open dataset](https://wa
 
 ### Project overview
 
-Object recognition is a crucial phase and rudimentary one  in the realm of self driving car, in this project, our aim is to identify some object of interest in which we can navigate, drive and do the required tasks efficiently and safly.
+Object recognition is crucial phase and rudimentary one  in the realm of self driving car, in this project, our aim is to identify some object of interest in which we can navigate, drive and do the required tasks efficiently and safly.
 
 ### Dataset
 #### Dataset analysis
