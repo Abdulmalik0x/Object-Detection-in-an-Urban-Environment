@@ -21,11 +21,11 @@ def split(data_dir):
     # You should move the files rather than copy because of space limitations in the workspace.
     files_length = int(len(glob.glob(data_dir+'/*')))
     files = glob.glob(data_dir+'/*')
-    print('files length : ', data_dir+'/*', len(files) )
-    train_lst =  files[:int(files_length * 0.73)]
-    val_list = files[int(files_length * 0.73):int(files_length * 0.90)]
-    print('val_list ', int(files_length * 0.77), int(files_length * 0.90) )
-    test_list = files[int(files_length * 0.93):]
+    random.shuffle(files)
+    train_lst =  files[:int(files_length * 0.90)]
+    val_list = files[int(files_length * 0.90):]
+    # print('val_list ', int(files_length * 0.77), int(files_length * 0.90) )
+    # test_list = files[int(files_length * 0.93):]
     
     for train_file in train_lst:
         shutil.move(train_file, '/home/workspace/data/waymo/train/' + train_file.split('/')[-1])
@@ -33,8 +33,8 @@ def split(data_dir):
     for val_file in val_list:
         shutil.move(val_file, '/home/workspace/data/waymo/val/' + val_file.split('/')[-1])
                 
-    for test_file in test_list:
-        shutil.move(test_file, '/home/workspace/data/waymo/test/' + test_file.split('/')[-1])
+    # for test_file in test_list:
+    #     shutil.move(test_file, '/home/workspace/data/waymo/test/' + test_file.split('/')[-1])
         
 if __name__ == "__main__": 
     parser = argparse.ArgumentParser(description='Split data into training / validation / testing')
